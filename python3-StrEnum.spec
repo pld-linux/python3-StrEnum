@@ -2,7 +2,7 @@ Summary:	An Enum that inherits from str
 Summary(pl.UTF-8):	Enum dziedziczący ze str
 Name:		python3-StrEnum
 Version:	0.4.15
-Release:	2
+Release:	3
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/StrEnum/
