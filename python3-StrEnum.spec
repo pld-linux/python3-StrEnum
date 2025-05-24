@@ -2,7 +2,7 @@ Summary:	An Enum that inherits from str
 Summary(pl.UTF-8):	Enum dziedziczący ze str
 Name:		python3-StrEnum
 Version:	0.4.15
-Release:	3
+Release:	4
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/StrEnum/
@@ -10,6 +10,7 @@ Source0:	https://files.pythonhosted.org/packages/source/S/StrEnum/StrEnum-%{vers
 # Source0-md5:	aa5e934c299dac8731c6db4008deab4d
 URL:		https://pypi.org/project/StrEnum/
 BuildRequires:	python3-modules >= 1:3.7
+BuildRequires:	python3-pytest-runner
 BuildRequires:	python3-setuptools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -29,6 +30,8 @@ enum.IntEnum z biblioteki standardowej. Obsługuje Pythona 3.7+
 
 %prep
 %setup -q -n StrEnum-%{version}
+
+sed -i -e 's#SafeConfigParser#ConfigParser#g' -e 's#readfp#read_file#g' versioneer.py
 
 %build
 %py3_build
